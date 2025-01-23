@@ -1,0 +1,22 @@
+div {
+    width: 400px;
+    background-color: #dddddd;
+    border: 1px solid #000000;
+    margin-left: 20px;
+    padding: 10px;
+    align-content: center;
+}
+p {
+    font-size: 18px;
+}
+h1 {
+    text-align: center;
+}
+q {
+    q::before{
+        content: open-quote;
+    }
+    q::after{
+        content: close-quote;;
+    }
+}
