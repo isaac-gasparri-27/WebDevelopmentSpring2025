@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e2d7aa;
+    color: #000000;
+    font-size: 16px;
+    width: 1180px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+li > a {
+    font-size: 28px;
+    color: #000000;
+}
+
+li > a.home {
+    font-weight: bold;
+    color: #13344E;
+}
+
+li:last-child > a{
+    font-weight: bold;
+    color: #13344E;
+}
+
+img {
+    width: 1180px;
+    height: 500px;
+}
+
+.img-container {
+    width: 1180px;
+    height: 500px;
+    margin-top: 60px;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 60px;
+    font-family: 'Indie Flower', cursive;
+    letter-spacing: 8px;
+}
+
+nav {
+    margin: 30px;
+}
+
+article > img {
+    width: 350px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+article > p::first-letter {
+    font-family: 'Old Standard TT', sans-serif;
+    font-size: 40px;
+}
+
+span > a {
+    background: url(bg2.jpg);
+    color: #ffffff;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+article {
+    width: 30%;
+    display: inline-block;
+    margin: 18px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+h3 > a {
+    color: darkblue;
+}
+
+article > p:first-of-type {
+    text-align: justify;
+    height: 360px;
+    width: 350px;
+    line-height: 21px;
+}
+
+article p:last-of-type span:first-of-type a::before {
+    content: url(comment.png);
+    position: relative;
+	right: 5px;
+	top: 7px;
+	padding: 10px;
+}
+
+.comments {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.readmore {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+footer {
+    margin: 0px;
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
