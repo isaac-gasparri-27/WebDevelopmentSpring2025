@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superhero Search App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1>Superhero Search</h1>
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Enter superhero name...">
+      <button id="search-button">Search</button>
+    </div>
+    <div id="error-message" class="error"></div>
+    <div id="superhero-details" class="superhero-card hidden">
+      <img id="hero-image" alt="Superhero Image">
+      <h2 id="hero-name"></h2>
+      <p id="hero-biography"></p>
+      <div id="hero-stats">
+        <h3>Power Stats:</h3>
+        <ul>
+          <li>Strength: <span id="hero-strength"></span></li>
+          <li>Speed: <span id="hero-speed"></span></li>
+          <li>Intelligence: <span id="hero-intelligence"></span></li>
+          <li>Durability: <span id="hero-durability"></span></li>
+          <li>Power: <span id="hero-power"></span></li>
+          <li>Combat: <span id="hero-combat"></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

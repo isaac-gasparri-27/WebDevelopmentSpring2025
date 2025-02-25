@@ -1,0 +1,87 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #0076B6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .app-container {
+    min-width: 750px;
+    background: #ffffff;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #B0B7BC;
+  }
+  
+  .search-box {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  #search-input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+  }
+  
+  #search-button {
+    background-color: #0076B6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+
+  }
+  
+  #search-button:hover {
+    background-color: #B0B7BC;
+    color: #0076B6;
+  }
+  
+  .error {
+    color: #ff4d4d;
+  }
+  
+  .superhero-card {
+    background: #f9fafb;
+  }
+  
+  .superhero-card img {
+    width: 90%;
+    border-radius: 12px;
+    float: none;
+  } 
+  
+  .superhero-card h2 {
+    color: #0076B6;
+  }
+  
+  .superhero-card p {
+    color: #B0B7BC;
+  }
+
+  #hero-stats h3 {
+    text-decoration: underline;
+  }
+  
+  #hero-stats ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  #hero-stats li {
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
