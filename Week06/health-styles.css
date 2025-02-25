@@ -1,0 +1,20 @@
+body {
+    background-color: aquamarine;
+    margin: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#header {
+    color: whitesmoke;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#countrySelect {
+    margin-bottom: 30px;
+}
+
+#covidChart {
+    border: 1px solid;
+    background-color: whitesmoke;
+}
