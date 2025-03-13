@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function increaseFontSize() {
+            let para = document.getElementById("para1");
+            let currentSize = window.getComputedStyle(para).fontSize;
+            let newSize = parseInt(currentSize) + 5 + "px";
+            para.style.fontSize = newSize;
+        }
+    </script>
+
+</head>
+<body>
+
+    <p id="Test">Original Text</p>
+    <script>
+
+        if (true) {
+            let x = 5;
+            const y = 6;
+            document.write(x)
+            document.write(y)
+        }
+
+        document.write("<h1>Hello World</h1>")
+        document.write("<p class='csci295'> This is a sample paragraph </p>")
+
+        document.getElementById("Test").innerHTML = "This is new text"
+        document.getElementsByClassName("csci295").innerHTML="Changed Text"
+
+        console.log("this is a test")
+        alert("hello")
+
+        
+    </script>
+
+    <p id="para1" ondblclick="increaseFontSize()">This is a paragraph. Click the button to increase its size.</p>
+    <button ondblclick="increaseFontSize()">Increase Font Size</button>
+
+
+    <p id="demo"></p>
+
+    <script>
+        // Create an empty Object
+        const person = {};
+
+        // Add Properties
+        person.firstName = "John";
+        person.lastName = "Doe";
+        person.age = 50;
+        person.eyeColor = "blue"; 
+
+        // Display Data from Object
+        document.getElementById("demo").innerHTML =
+        person.firstName + " is " + person.age + " years old. They have " + person.eyeColor + " eyes.";
+    </script>
+
+<p id="demo1"></p>
+
+<script>
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+document.getElementById("demo1").innerHTML = person.fullName();
+</script>
+</body>
+</html> 
