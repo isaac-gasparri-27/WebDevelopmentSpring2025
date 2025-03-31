@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Note</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Indie+Flower&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxygen:wght@300;400;700&family=Pridi:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        body {
+            font-family: "Oxygen", sans-serif;
+            background-color: darkgrey;
+            font-size: 1rem; /* Base font size */
+            line-height: 1.6; /* Improves readability */
+        }
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
+        }
+        h2 {
+            font-size: clamp(1.25rem, 4vw, 2rem); /* Responsive font size */
+        }
+        p, small, label, input, textarea, button {
+            font-size: 1rem; /* Default font size for body text */
+        }
+        .note h3 {
+            font-size: 1.25rem; /* Slightly larger for note titles */
+        }
+        nav {
+            background-color: lightgrey;
+            padding: 10px 10px 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 300px;
+        }
+        button {
+            padding: 5px;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem; /* Slightly smaller font size for small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <%- include('navbar', {page: "edit"}); -%>
+    </nav>
+    <h1>Edit Note</h1>
+    <form action="/notes/<%= note.id %>" method="POST">
+        <input type="text" name="title" value="<%= note.title %>" required style="padding: 5px; width: 200px;">
+        <textarea name="body" required style="padding: 5px; width: 200px; height: 100px;"><%= note.body %></textarea>
+        <label>
+          <input type="checkbox" name="starred" <%= note.starred ? 'checked' : '' %>> Mark as Important
+        </label>
+        <label>
+          Color: <input type="color" name="color" value="<%= note.color %>">
+        </label>
+        <button type="submit" style="padding: 5px;">Update</button>
+    </form>
+    <a href="/" style="text-decoration: none;">
+        <button type="button" style="padding: 5px;">Back to Home</button>
+    </a>
+</body>
+</html>

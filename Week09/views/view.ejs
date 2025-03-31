@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Notes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Indie+Flower&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxygen:wght@300;400;700&family=Pridi:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        body {
+            font-family: "Oxygen", sans-serif;
+            background-color: darkgrey;
+            font-size: 1rem; /* Base font size */
+            line-height: 1.6; /* Improves readability */
+        }
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
+        }
+        h2 {
+            font-size: clamp(1.25rem, 4vw, 2rem); /* Responsive font size */
+        }
+        p, small, label, input, textarea, button {
+            font-size: 1rem; /* Default font size for body text */
+        }
+        .note h3 {
+            font-size: 1.25rem; /* Slightly larger for note titles */
+        }
+        nav {
+            background-color: lightgrey;
+            padding: 10px 10px 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        #notes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .note {
+            border: 1px solid black;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 600px) {
+            #notes-container {
+                grid-template-columns: 1fr; /* Single column for small screens */
+            }
+            body {
+                font-size: 0.9rem; /* Slightly smaller font size for small screens */
+            }
+        }
+        button {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <%- include('navbar', {page: "view"}); -%>
+    </nav>
+    <h1>All Notes</h1>
+    <div id="notes-container">
+        <% notes.filter(note => note.starred).forEach(note => { %>
+            <div class="note" id="note-<%= note.id %>" style="background-color: <%= note.color %>;">
+                <h3><%= note.title %> ⭐</h3>
+                <p><%= note.body %></p>
+                <small>Created: <%= new Date(note.createdAt).toLocaleString() %></small><br>
+                <small>Updated: <%= new Date(note.updatedAt).toLocaleString() %></small>
+                <form onsubmit="deleteNote(event, <%= note.id %>)" method="POST" style="display: inline;">
+                    <button type="submit">Delete</button>
+                </form>
+                <a href="/notes/<%= note.id %>/edit">Edit</a>
+            </div>
+        <% }) %>
+    </div>
+
+    <script>
+        async function deleteNote(event, noteId) {
+            event.preventDefault();
+            const response = await fetch(`/notes/delete/${noteId}?_method=DELETE`, { method: 'POST' });
+            if (response.ok) {
+                const noteElement = document.getElementById(`note-${noteId}`);
+                if (noteElement) {
+                    noteElement.remove();
+                }
+            } else {
+                alert('Failed to delete the note.');
+            }
+        }
+    </script>
+</body>
+</html>
