@@ -25,7 +25,7 @@ router.post('/notes', function (req, res, next) {
       title,
       body,
       color: color || '#ffffff', 
-      starred: starred === 'on', 
+      starred: !!starred, // Ensure starred is a boolean
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
   };
@@ -58,7 +58,7 @@ router.post('/notes/:id', function (req, res, next) {
   note.title = title;
   note.body = body;
   note.color = color || 'white';
-  note.starred = starred === 'on';
+  note.starred = !!starred; // Ensure starred is a boolean
   note.updatedAt = new Date().toISOString();
   writeNotes(notes);
   res.redirect('/');

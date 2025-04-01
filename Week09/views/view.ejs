@@ -64,9 +64,9 @@
     </nav>
     <h1>All Notes</h1>
     <div id="notes-container">
-        <% notes.filter(note => note.starred).forEach(note => { %>
+        <% notes.forEach(note => { %>
             <div class="note" id="note-<%= note.id %>" style="background-color: <%= note.color %>;">
-                <h3><%= note.title %> ⭐</h3>
+                <h3><%= note.title %> <%= note.starred ? '⭐' : '' %></h3>
                 <p><%= note.body %></p>
                 <small>Created: <%= new Date(note.createdAt).toLocaleString() %></small><br>
                 <small>Updated: <%= new Date(note.updatedAt).toLocaleString() %></small>
